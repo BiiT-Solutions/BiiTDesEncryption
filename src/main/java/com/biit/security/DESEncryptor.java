@@ -86,8 +86,7 @@ public class DESEncryptor {
 			byte[] utf8 = plainText.getBytes("UTF8");
 			byte[] enc = encryptorCipher.doFinal(utf8);
 			// encode to base64
-			enc = Base64.encodeBase64(enc);
-			return new String(enc);
+			return Base64.encodeBase64URLSafeString(enc);
 		} catch (UnsupportedEncodingException e) {
 			throw new DESEncryptorException("Unsupported Encoding: " + e.getMessage());
 		} catch (IllegalBlockSizeException e) {
@@ -111,7 +110,7 @@ public class DESEncryptor {
 				initWithPassPhrase();
 			}
 			// decode with base64 to get bytes
-			byte[] dec = Base64.decodeBase64(codifiedText.getBytes());
+			byte[] dec = Base64.decodeBase64(codifiedText);
 			byte[] utf8 = decryptorCipher.doFinal(dec);
 			// create new string based on the specified charset
 			return new String(utf8, "UTF8");
