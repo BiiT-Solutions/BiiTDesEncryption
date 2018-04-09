@@ -7,6 +7,26 @@
 	<packaging>jar</packaging>
 	<version>1.0.0</version>
 	<name>DES Encryption Utils</name>
+	
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>libs-releases</name>
+			<url>https://dev.biit-solutions.com/artifactory/libs-release</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>libs-snapshot</name>
+			<url>https://dev.biit-solutions.com/artifactory/libs-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<scm>
+		<connection>scm:git:git.biit-solutions.com:DESEncryption.git</connection>
+		<developerConnection>scm:git:git.biit-solutions.com:DESEncryption.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -14,8 +34,11 @@
 		<plugin.compiler.version>2.3.2</plugin.compiler.version>
 		<plugin.exec.version>1.2.1</plugin.exec.version>
 		<org.testng.version>6.8</org.testng.version>
-		<biit-common-utils.version>0.0.1</biit-common-utils.version>
+		<maven-release-plugin.version>2.5.1</maven-release-plugin.version>
+		<maven-scm-provider-gitexe.version>1.9.2</maven-scm-provider-gitexe.version>
 		<surefire.version>2.16</surefire.version>
+		<!-- BiiT dependencies -->
+		<biit-common-utils.version>[0.4,0.5)</biit-common-utils.version>
 	</properties>
 
 	<build>
@@ -39,16 +62,25 @@
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>${maven-release-plugin.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>${maven-scm-provider-gitexe.version}</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<checkModificationExcludes>
+						<checkModificationExclude>pom.xml</checkModificationExclude>
+					</checkModificationExcludes>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
-	<distributionManagement>
-		<repository>
-			<id>central</id>
-			<name>libs-releases</name>
-			<url>https://dev.biit-solutions.com/artifactory/libs-release</url>
-		</repository>
-	</distributionManagement>
 
 	<dependencies>
 		<!-- Base64 decoder/encoder -->
