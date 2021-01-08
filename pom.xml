@@ -8,6 +8,19 @@
 	<version>1.0.0</version>
 	<name>DES Encryption Utils</name>
 
+	<distributionManagement>
+		<repository>
+			<id>central</id>
+			<name>libs-releases</name>
+			<url>https://artifactory.biit-solutions.com/artifactory/libs-release</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>libs-snapshot</name>
+			<url>https://artifactory.biit-solutions.com/artifactory/libs-snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.jdk.version>1.7</java.jdk.version>
@@ -42,13 +55,6 @@
 		</plugins>
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>central</id>
-			<name>biit-releases</name>
-			<url>https://git.biit-solutions.com:8443/artifactory/ext-release-local</url>
-		</repository>
-	</distributionManagement>
 
 	<dependencies>
 		<!-- Base64 decoder/encoder -->
