@@ -8,6 +8,13 @@
 	<version>1.0.0</version>
 	<name>DES Encryption Utils</name>
 
+	<parent>
+		<groupId>com.biit</groupId>
+		<artifactId>versions</artifactId>
+		<version>[0.1,0.2)</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
 	<distributionManagement>
 		<repository>
 			<id>central</id>
@@ -26,9 +33,6 @@
 		<java.jdk.version>1.7</java.jdk.version>
 		<plugin.compiler.version>2.3.2</plugin.compiler.version>
 		<plugin.exec.version>1.2.1</plugin.exec.version>
-		<org.testng.version>6.8</org.testng.version>
-		<biit-common-utils.version>0.0.1</biit-common-utils.version>
-		<surefire.version>2.16</surefire.version>
 	</properties>
 
 	<build>
@@ -45,7 +49,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>${surefire.version}</version>
+				<version>${maven-surefire.version}</version>
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/config/testng.xml</suiteXmlFile>
@@ -61,7 +65,6 @@
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<version>1.9</version>
 		</dependency>
 		<!-- Testing -->
 		<dependency>

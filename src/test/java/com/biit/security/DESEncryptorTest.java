@@ -1,6 +1,6 @@
 package com.biit.security;
 
-import org.junit.Assert;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.biit.security.exceptions.DESEncryptorException;
