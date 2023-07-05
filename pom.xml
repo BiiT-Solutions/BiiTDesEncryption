@@ -4,7 +4,7 @@
 	<groupId>com.biit.security</groupId>
 	<artifactId>DES-encryption</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.36</version>
+	<version>1.0.37-SNAPSHOT</version>
 	<name>DES Encryption Utils</name>
 	
 	<distributionManagement>
@@ -23,7 +23,7 @@
 	<scm>
 		<connection>scm:git:git.biit-solutions.com:BiiT/DESEncryption.git</connection>
 		<developerConnection>scm:git:git.biit-solutions.com:BiiT/DESEncryption.git</developerConnection>
-		<tag>DES-encryption-1.0.36</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 
