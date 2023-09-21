@@ -1,18 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.biit.security</groupId>
 	<artifactId>DES-encryption</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.41-SNAPSHOT</version>
+	<version>1.0.41</version>
 	<name>DES Encryption Utils</name>
 
 	<parent>
 		<groupId>com.biit</groupId>
 		<artifactId>versions</artifactId>
 		<version>[0.1,0.2)</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<distributionManagement>
@@ -31,7 +30,7 @@
 	<scm>
 		<connection>scm:git:git.biit-solutions.com:Java/DESEncryption.git</connection>
 		<developerConnection>scm:git:git.biit-solutions.com:Java/DESEncryption.git</developerConnection>
-		<tag>FactManager</tag>
+		<tag>DES-encryption-1.0.41</tag>
 	</scm>
 
 	<properties>
