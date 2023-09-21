@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.biit.security</groupId>
@@ -6,7 +7,14 @@
 	<packaging>jar</packaging>
 	<version>1.0.41-SNAPSHOT</version>
 	<name>DES Encryption Utils</name>
-	
+
+	<parent>
+		<groupId>com.biit</groupId>
+		<artifactId>versions</artifactId>
+		<version>[0.1,0.2)</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
 	<distributionManagement>
 		<repository>
 			<id>central</id>
@@ -19,25 +27,18 @@
 			<url>https://artifactory.biit-solutions.com/artifactory/libs-snapshot</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
-	<scm>
-		<connection>scm:git:git.biit-solutions.com:BiiT/DESEncryption.git</connection>
-		<developerConnection>scm:git:git.biit-solutions.com:BiiT/DESEncryption.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
 
+	<scm>
+		<connection>scm:git:git.biit-solutions.com:Java/DESEncryption.git</connection>
+		<developerConnection>scm:git:git.biit-solutions.com:Java/DESEncryption.git</developerConnection>
+		<tag>FactManager</tag>
+	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.jdk.version>1.7</java.jdk.version>
 		<plugin.compiler.version>2.3.2</plugin.compiler.version>
 		<plugin.exec.version>1.2.1</plugin.exec.version>
-		<org.testng.version>6.8</org.testng.version>
-		<maven-release-plugin.version>2.5.1</maven-release-plugin.version>
-		<maven-scm-provider-gitexe.version>1.9.2</maven-scm-provider-gitexe.version>
-		<surefire.version>2.16</surefire.version>
-		<!-- BiiT dependencies -->
-		<biit-common-utils.version>[0.4,0.5)</biit-common-utils.version>
 	</properties>
 
 	<build>
@@ -54,39 +55,22 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>${surefire.version}</version>
+				<version>${maven-surefire.version}</version>
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/config/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<version>${maven-release-plugin.version}</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.apache.maven.scm</groupId>
-						<artifactId>maven-scm-provider-gitexe</artifactId>
-						<version>${maven-scm-provider-gitexe.version}</version>
-					</dependency>
-				</dependencies>
-				<configuration>
-					<checkModificationExcludes>
-						<checkModificationExclude>pom.xml</checkModificationExclude>
-					</checkModificationExcludes>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
+
 
 	<dependencies>
 		<!-- Base64 decoder/encoder -->
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>
-			<version>1.9</version>
 		</dependency>
 		<!-- Testing -->
 		<dependency>
