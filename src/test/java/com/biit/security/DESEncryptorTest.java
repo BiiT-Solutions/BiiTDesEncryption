@@ -15,7 +15,7 @@ public class DESEncryptorTest {
 		Assert.assertFalse(plainText.equals(encryptedText));
 		// Decrypt text.
 		String decryptedText = DESEncryptor.decrypt(encryptedText);
-		// Decrypted text is the same than the original.
+		// Decrypted text is the same as the original.
 		Assert.assertEquals(decryptedText, plainText);
 	}
 
