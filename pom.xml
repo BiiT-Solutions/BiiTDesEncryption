@@ -35,9 +35,6 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.jdk.version>1.7</java.jdk.version>
-		<plugin.compiler.version>2.3.2</plugin.compiler.version>
-		<plugin.exec.version>1.2.1</plugin.exec.version>
 	</properties>
 
 	<build>
@@ -45,10 +42,9 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${plugin.compiler.version}</version>
 				<configuration>
-					<source>${java.jdk.version}</source>
-					<target>${java.jdk.version}</target>
+					<source>${java-old.version}</source>
+					<target>${java-old.version}</target>
 				</configuration>
 			</plugin>
 			<plugin>

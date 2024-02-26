@@ -12,7 +12,7 @@ public class DESEncryptorTest {
 		// Encrypt text.
 		String encryptedText = DESEncryptor.encrypt(plainText);
 		// Have modified the text.
-		Assert.assertFalse(plainText.equals(encryptedText));
+        Assert.assertNotEquals(encryptedText, plainText);
 		// Decrypt text.
 		String decryptedText = DESEncryptor.decrypt(encryptedText);
 		// Decrypted text is the same as the original.
