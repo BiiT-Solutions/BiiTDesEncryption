@@ -4,7 +4,7 @@
 	<groupId>com.biit.security</groupId>
 	<artifactId>DES-encryption</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.84-SNAPSHOT</version>
+	<version>1.0.84</version>
 	<name>DES Encryption Utils</name>
 
 	<parent>
@@ -30,7 +30,7 @@
 	<scm>
 		<connection>scm:git:git.biit-solutions.com:Java/DESEncryption.git</connection>
 		<developerConnection>scm:git:git.biit-solutions.com:Java/DESEncryption.git</developerConnection>
-		<tag>FactManager</tag>
+		<tag>DES-encryption-1.0.84</tag>
 	</scm>
 
 	<properties>
