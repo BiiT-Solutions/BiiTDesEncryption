@@ -24,7 +24,7 @@ public final class DESEncryptor {
     private static Cipher encryptorCipher = null;
     private static Cipher decryptorCipher = null;
     private static final int ITERATION_COUNT = 10;
-    private static final String VALUE = "aYxLpHZzuFammYJYaUbi";
+    private static final String VALUE = "aYxLpHZzuFammYsJYaUbi";
 
     private DESEncryptor() {
     }
