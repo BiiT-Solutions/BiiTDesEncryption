@@ -19,19 +19,20 @@ import java.security.spec.AlgorithmParameterSpec;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 
-public final class DESEncryptor {
+public class DESEncryptor {
     private static final String DEFAULT_ALGORITHM = "PBEWithMD5AndDES";
     private static Cipher encryptorCipher = null;
     private static Cipher decryptorCipher = null;
     private static final int ITERATION_COUNT = 10;
-    private static final String VALUE = "aYxLpHZzuFammYsJYaUbi";
-
-    private DESEncryptor() {
-    }
+    private static String pass = "aYxLpHZzuFammYJYaUbi";
 
     // 8-byte Salt
     private static byte[] salt = {(byte) 0xB2, (byte) 0x12, (byte) 0xD5, (byte) 0xB2, (byte) 0x44, (byte) 0x21,
             (byte) 0xC3, (byte) 0xC3};
+
+    private DESEncryptor() {
+
+    }
 
     /**
      * Initialize variable.
@@ -42,7 +43,7 @@ public final class DESEncryptor {
         try {
             // create a user-chosen password that can be used with password-based encryption (PBE)
             // provide password, salt, iteration count for generating PBEKey of fixed-key-size PBE ciphers
-            KeySpec keySpec = new PBEKeySpec(VALUE.toCharArray(), salt, ITERATION_COUNT);
+            KeySpec keySpec = new PBEKeySpec(pass.toCharArray(), salt, ITERATION_COUNT);
 
             // create a secret (symmetric) key using PBE with MD5 and DES
             SecretKey key = SecretKeyFactory.getInstance(DEFAULT_ALGORITHM).generateSecret(keySpec);
