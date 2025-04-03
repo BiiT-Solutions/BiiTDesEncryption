@@ -4,7 +4,7 @@
 	<groupId>com.biit.security</groupId>
 	<artifactId>DES-encryption</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.86-SNAPSHOT</version>
+	<version>1.0.87-SNAPSHOT</version>
 	<name>DES Encryption Utils</name>
 
 	<parent>
