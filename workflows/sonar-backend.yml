@@ -41,8 +41,8 @@ jobs:
           projectBaseDir: backend
           args: >
             -Dsonar.organization=biit-solutions
-            "-Dsonar.projectName=BiiT Common Utils"
-            -Dsonar.projectKey=BiiT-Solutions_BiiTCommonUtils
+            "-Dsonar.projectName=BiiT DES Encryption"
+            -Dsonar.projectKey=BiiT-Solutions_BiiTDesEncryption
             -Dsonar.java.binaries=.
             -Dsonar.verbose=true
             -Dsonar.test.exclusions=**/test/*
