@@ -2,7 +2,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.biit-solutions.security</groupId>
-	<artifactId>DES-encryption</artifactId>
+	<artifactId>des-encryption</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0.110-SNAPSHOT</version>
 	<name>DES Encryption Utils</name>
