@@ -1,5 +1,26 @@
 package com.biit.security;
 
+/*-
+ * #%L
+ * DES Encryption Utils
+ * %%
+ * Copyright (C) 2014 - 2025 BiiT Sourcing Solutions S.L.
+ * %%
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * #L%
+ */
+
 import com.biit.security.exceptions.DESEncryptorException;
 import org.apache.commons.codec.binary.Base64;
 
@@ -19,7 +40,7 @@ import java.security.spec.AlgorithmParameterSpec;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 
-public class DESEncryptor {
+public final class DESEncryptor {
     private static final String DEFAULT_ALGORITHM = "PBEWithMD5AndDES";
     private static Cipher encryptorCipher = null;
     private static Cipher decryptorCipher = null;
@@ -27,7 +48,7 @@ public class DESEncryptor {
     private static String pass = "aYxLpHZzuFammYJYaUbi";
 
     // 8-byte Salt
-    private static byte[] salt = {(byte) 0xB2, (byte) 0x12, (byte) 0xD5, (byte) 0xB2, (byte) 0x44, (byte) 0x21,
+    private static final byte[] SALT = {(byte) 0xB2, (byte) 0x12, (byte) 0xD5, (byte) 0xB2, (byte) 0x44, (byte) 0x21,
             (byte) 0xC3, (byte) 0xC3};
 
     private DESEncryptor() {
@@ -43,13 +64,13 @@ public class DESEncryptor {
         try {
             // create a user-chosen password that can be used with password-based encryption (PBE)
             // provide password, salt, iteration count for generating PBEKey of fixed-key-size PBE ciphers
-            KeySpec keySpec = new PBEKeySpec(pass.toCharArray(), salt, ITERATION_COUNT);
+            KeySpec keySpec = new PBEKeySpec(pass.toCharArray(), SALT, ITERATION_COUNT);
 
             // create a secret (symmetric) key using PBE with MD5 and DES
             SecretKey key = SecretKeyFactory.getInstance(DEFAULT_ALGORITHM).generateSecret(keySpec);
 
             // construct a parameter set for password-based encryption as defined in the PKCS #5 standard
-            AlgorithmParameterSpec paramSpecification = new PBEParameterSpec(salt, ITERATION_COUNT);
+            AlgorithmParameterSpec paramSpecification = new PBEParameterSpec(SALT, ITERATION_COUNT);
 
             // Define the ciphers.
             encryptorCipher = Cipher.getInstance(key.getAlgorithm());

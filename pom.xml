@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.biit.security</groupId>
+	<groupId>com.biit-solutions.security</groupId>
 	<artifactId>DES-encryption</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0.110-SNAPSHOT</version>
@@ -10,27 +10,41 @@
 	<parent>
 		<groupId>com.biit</groupId>
 		<artifactId>versions</artifactId>
-		<version>[0.1,0.2)</version>
+		<version>[1.0,1.1)</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
+	<licenses>
+		<license>
+			<name>GNU AGPL v3</name>
+			<url>https://www.gnu.org/licenses/agpl-3.0.html</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>BiiT Sourcing Solutions S.L.</name>
+		<url>https://www.biit-solutions.com/</url>
+	</organization>
 
 	<distributionManagement>
 		<repository>
 			<id>central</id>
-			<name>libs-releases</name>
-			<url>https://artifactory.biit-solutions.com/artifactory/libs-release</url>
+			<name>Maven Central</name>
+			<url>https://repo.maven.apache.org/maven2</url>
 		</repository>
 		<snapshotRepository>
-			<id>snapshots</id>
-			<name>libs-snapshot</name>
-			<url>https://artifactory.biit-solutions.com/artifactory/libs-snapshot</url>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/BiiT-Solutions/BiiTCommonUtils</url>
 		</snapshotRepository>
 	</distributionManagement>
 
 	<scm>
-		<connection>scm:git:git.biit-solutions.com:Java/DESEncryption.git</connection>
-		<developerConnection>scm:git:git.biit-solutions.com:Java/DESEncryption.git</developerConnection>
-		<tag>FactManager</tag>
+		<connection>scm:git:ssh://git@github.com/BiiT-Solutions/BiiTDesEncryption.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/BiiT-Solutions/BiiTDesEncryption.git</developerConnection>
+		<url>https://github.com/BiiT-Solutions/BiiTDesEncryption.git</url>
+		<tag>des-encryption</tag>
 	</scm>
 
 	<properties>
@@ -56,6 +70,29 @@
 						<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<version>${license-maven-plugin.version}</version>
+				<configuration>
+					<organizationName>BiiT Sourcing Solutions S.L.</organizationName>
+					<inceptionYear>2014</inceptionYear>
+					<licenseName>agpl_v3</licenseName>
+					<excludes>
+						<exclude>**/*.properties</exclude>
+						<exclude>**/*.xml</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>first</id>
+						<goals>
+							<goal>update-file-header</goal>
+						</goals>
+						<phase>package</phase>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
