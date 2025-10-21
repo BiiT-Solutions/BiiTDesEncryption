@@ -8,7 +8,7 @@
 	<name>DES Encryption Utils</name>
 
 	<parent>
-		<groupId>com.biit</groupId>
+		<groupId>com.biit-solutions</groupId>
 		<artifactId>versions</artifactId>
 		<version>[1.0,1.1)</version>
 		<relativePath /> <!-- lookup parent from repository -->
