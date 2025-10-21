@@ -36,7 +36,7 @@
 		<snapshotRepository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/BiiT-Solutions/BiiTCommonUtils</url>
+			<url>https://maven.pkg.github.com/BiiT-Solutions/BiiTDesEncryption</url>
 		</snapshotRepository>
 	</distributionManagement>
 
