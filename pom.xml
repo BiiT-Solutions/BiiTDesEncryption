@@ -4,13 +4,13 @@
 	<groupId>com.biit-solutions.security</groupId>
 	<artifactId>des-encryption</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.111-SNAPSHOT</version>
+	<version>1.0.111</version>
 	<name>DES Encryption Utils</name>
 
 	<parent>
 		<groupId>com.biit-solutions</groupId>
 		<artifactId>versions</artifactId>
-		<version>[1.0,1.1)</version>
+		<version>[0.1,0.2)</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -44,7 +44,7 @@
 		<connection>scm:git:ssh://git@github.com/BiiT-Solutions/BiiTDesEncryption.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/BiiT-Solutions/BiiTDesEncryption.git</developerConnection>
 		<url>https://github.com/BiiT-Solutions/BiiTDesEncryption.git</url>
-		<tag>des-encryption</tag>
+		<tag>des-encryption-1.0.111</tag>
 	</scm>
 
 	<properties>
